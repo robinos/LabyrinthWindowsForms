@@ -9,6 +9,10 @@ namespace LabyrinthWindowsForms
 	/// <summary>
 	/// Pair represents a generic pair of values. This could probably have been done
 	/// with the C# Tuple class, but Pair was part of the original Java code.
+	/// 
+	/// @conversion author: Robin Osborne
+	/// @version: 0.1.0
+	/// @date: 2015-01-30
 	/// </summary>
 	/// <typeparam name="A">type A</typeparam>
 	/// <typeparam name="B">type B</typeparam>

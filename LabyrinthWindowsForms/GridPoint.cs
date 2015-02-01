@@ -10,6 +10,10 @@ namespace LabyrinthWindowsForms
 	/// The GridPoint class represents a point of the maze grid with methods for
 	/// determining direction and which other GridPoint (if any) can be found in
 	/// the directions UP, RIGHT, DOWN and LEFT.
+	/// 
+	/// @conversion author: Robin Osborne
+	/// @version: 0.1.0
+	/// @date: 2015-01-30
 	/// </summary>
 	public class GridPoint
 	{
