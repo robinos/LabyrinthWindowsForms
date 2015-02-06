@@ -1,6 +1,6 @@
 ﻿namespace LabyrinthWindowsForms
 {
-	partial class LabyrinthGameGridForm
+	partial class LabyrinthMazeGridForm
 	{
 		/// <summary>
 		/// Required designer variable.

@@ -42,7 +42,7 @@ namespace LabyrinthWindowsForms
 	public class ExtendedGraph<T> : Graph<T>
 	{
 		/// <summary>
-		/// GetPath calls GetPathRecursive to receive the optimal path through the
+		/// GetPath calls GetPathRecursive to receive the path through the
 		/// labyrinth, which it then returns.
 		/// </summary>
 		/// <param name="destName">the desired destination to get a path to</param>

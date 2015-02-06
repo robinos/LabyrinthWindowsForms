@@ -13,6 +13,36 @@ namespace LabyrinthWindowsForms
 	/// <summary>
 	/// LabyrinthGameGridForm contains all code that directly interfaces with the form of
 	/// the same name.
+	/// The RemoveLine method is an observer to the EventHandler SquareWallRemoved in the
+	/// MazeLogic class. This means that event fires for each wall that the algorithm
+	/// calculates must be destroyed and RemoveLine then reacts by erasing that line/wall.
+	/// FillPathSquare is an observer to the EventHandler PathSegmentDrawn, also in the MazeLogic
+	/// class. For each square that forms the path out of the maze, the PathSegmentDrawn event is
+	/// fired and the FillPathSquare method reacts by putting a red circle in that square.
+	/// 
+	/// -constructor-
+	/// LabyrinthMazeGridForm(MazeLogic mazeLogic) - initialise variables, graphics and form
+	/// 
+	/// -methods-
+	/// InitializeGraphics - re-initialises the maze grid before each new maze is created 
+	/// DrawGrid - draws the grid squares
+	/// RemoveLine - removes a wall of a square in an up, down, left or right direction
+	///		(watches SquareWallRemoved in MazeLogic)
+	/// DrawLine - draws a line from a column, row coordinate to another, with the given color
+	/// FillPathSquare - fills a square with a red circle (watches PathSegmentDrawn in MazeLogic)
+	/// MazePanel_Paint - paints the maze graphics onto the maze panel with the same graphics
+	///		object used to create the panel
+	/// SearchButton_Click - When the search button is clicked, the Search() method in MazeLogic
+	///		is called.
+	///	NewButton_Click - When the new button is clicked, the Create() method in MazeLogic is
+	///		called.
+	/// ColumnBox_TextChanged - When a value is entered in the ColumnBox textbox the minimum is
+	///		enforced as 1 and the maximum as 20
+	/// RowBox_TextChanged - As above, but for RowBox.
+	/// ColumnBox_KeyPress - Calls the AcceptOnlyNumbers method.
+	/// RowBox_KeyPress - As above, but for RowBox.
+	/// AcceptOnlyNumbers - A method called by ColumnBox_KeyPress and RowBox_KeyPress to ensure
+	///		only numbers can be entered into the textbox.
 	/// 
 	/// @author: Robin Osborne
 	/// @version: 0.1.0
@@ -31,7 +61,7 @@ namespace LabyrinthWindowsForms
 	/// You should have received a copy of the GNU General Public License
 	/// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	/// </summary>
-	public partial class LabyrinthGameGridForm : Form
+	public partial class LabyrinthMazeGridForm : Form
 	{
 		private Bitmap mazeImage;
 		private Graphics mazeGraphics;
@@ -53,7 +83,7 @@ namespace LabyrinthWindowsForms
 		/// </summary>
 		/// <param name="mazeLogic">the MazeLogic object that will run logical operations for
 		///		this form</param>
-		public LabyrinthGameGridForm(MazeLogic mazeLogic)
+		public LabyrinthMazeGridForm(MazeLogic mazeLogic)
 		{
 			this.mazeLogic = mazeLogic;
 

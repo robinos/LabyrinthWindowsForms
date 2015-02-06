@@ -54,7 +54,7 @@ namespace LabyrinthWindowsForms
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			MazeLogic mazeLogic = new MazeLogic();
-			LabyrinthGameGridForm labyrinthGameGridForm = new LabyrinthGameGridForm(mazeLogic);
+			LabyrinthMazeGridForm labyrinthGameGridForm = new LabyrinthMazeGridForm(mazeLogic);
 			mazeLogic.SquareWallRemoved += labyrinthGameGridForm.RemoveLine;
 			mazeLogic.PathSegmentDrawn += labyrinthGameGridForm.FillPathSquare;
 

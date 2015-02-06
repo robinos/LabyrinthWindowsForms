@@ -51,11 +51,11 @@
     <Compile Include="IPriorityQueue.cs" />
     <Compile Include="LineDrawnEventArgs.cs" />
     <Compile Include="MazeLogic.cs" />
-    <Compile Include="LabyrinthGameGridForm.cs">
+    <Compile Include="LabyrinthMazeGridForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LabyrinthGameGridForm.Designer.cs">
-      <DependentUpon>LabyrinthGameGridForm.cs</DependentUpon>
+    <Compile Include="LabyrinthMazeGridForm.Designer.cs">
+      <DependentUpon>LabyrinthMazeGridForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LabyrinthProgram.cs" />
     <Compile Include="GridPoint.cs" />
@@ -63,8 +63,8 @@
     <Compile Include="PathSquareFilledEventArgs.cs" />
     <Compile Include="PriorityQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LabyrinthGameGridForm.resx">
-      <DependentUpon>LabyrinthGameGridForm.cs</DependentUpon>
+    <EmbeddedResource Include="LabyrinthMazeGridForm.resx">
+      <DependentUpon>LabyrinthMazeGridForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

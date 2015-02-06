@@ -15,43 +15,30 @@ namespace LabyrinthWindowsForms
 	/// the event PathSegmentDrawn to notify the FillPathSquare method in LabyrinthGameGridForm
 	/// for drawing the solution path to the maze.
 	///
-	/// disjointSet is used for the find/union logic, random is the random generator
-	/// for labyrinth path creation, and extendedGraph is the graph used for the search
+	/// DisjointSet is used for the find/union logic, random is the random generator
+	/// for labyrinth path creation, and ExtendedGraph is the graph used for the search
 	/// method.
 	///
-	/// InitializeMaze initialises a new Maze. 
-	/// 
-	/// The create method uses find/union disjoint set logic to create a labyrinth while building
-	/// up a graph (unweighted). It calls KnockDownWall to handle notifying the UI of the changes.
-	///
-	/// KnockDownWall(int squareId, GridPoint.Direction dir) calls the other KnockDownWall method.
-	/// KnockDownWall(int row, int col, GridPoint.Direction dir) determines the coordinates for
-	/// the line to remove and sends the SquareWallRemoved event.
-	/// 
-	/// The search method uses the unweighted graph algorith, retrieves the path with
-	/// GetPath (from the ExtendedGraph class), and then sends the PathSegmentDrawn event for
-	/// each path square.
-	/// 
-	/// GetSquareId gets the integer id of a grid square from the row and
-	/// column of a GridPoint. 
-	/// 
-	/// GetRow gets the row number of a grid square from square id.
-	/// 
-	/// GetColumn gets the column number of a grid square from square id.
-	/// 
-	/// IsValid returns if a GridPoint is within the limits of the grid. 
-	/// 
-	/// The hasValidExit method determines if a point on the grid has a valid exit using
-	/// the isValid method from Point, and the unionPossible method.  This is used to
-	/// determine when no more exits are possible (the end has been reached).
-	///
-	/// The validDirection method determines if a randomly chosen direction is valid
-	/// using the isValid method from Point, and the unionPossible method.
-	/// 
-	/// The unionPossible method determines if union between two points is possible.
-	///
-	/// The calculateUntion method performs the actual union for two points and adds
-    /// Edges to extendedGraph for later use by the search method.
+	/// -methods-
+	/// InitializeMaze - initialises a new Maze. 
+	/// Create - uses find/union disjoint set logic to create a labyrinth while building up a
+	///		graph (unweighted). It calls KnockDownWall to handle notifying the UI of the changes.
+	/// KnockDownWall(int squareId, GridPoint.Direction dir) - calls the other KnockDownWall method
+	/// KnockDownWall(int row, int col, GridPoint.Direction dir) - determines the coordinates for
+	///		the line to remove and sends the SquareWallRemoved event
+	/// Search - uses the unweighted graph algorith, retrieves the path with GetPath (from the
+	///		ExtendedGraph class), and then sends the PathSegmentDrawn event for each path square.
+	/// GetSquareId - gets the integer id of a grid square from the row and column of a GridPoint. 
+	/// GetRow - gets the row number of a grid square from square id.
+	/// GetColumn - gets the column number of a grid square from square id.
+	/// IsValid - returns if a GridPoint is within the limits of the grid. 
+	/// HasValidExit - determines if a point on the grid has a valid exit using
+	/// IsValid - used to determine when no more exits are possible (the end has been reached).
+	/// ValidDirection - determines if a randomly chosen direction is valid using the IsValid
+	///		and UnionPossible methods.
+	/// UnionPossible - determines if union between two points is possible (with DisjoinSets)
+	/// CalculateUntion - performs the actual union for two points and adds Edges to ExtendedGraph
+	///		for later use by the Search method.
   	///
 	/// Original Java version:
     /// @author: Robin Osborne and Emma Dirnberger
